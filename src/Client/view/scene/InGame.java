@@ -131,46 +131,48 @@ public class InGame extends javax.swing.JFrame {
         }
     }
 
-    public void setWin(String winEmail) {
+    public void setWin(String winUserName) {
         // pause timer
         matchTimer.pause();
         turnTimer.pause();
 
         // tie
-        if (winEmail == null) {
+        if (winUserName == null) {
             addChat(new ChatItem("[]", "KẾT QUẢ", "HÒA"));
             JOptionPane.showMessageDialog(this, "Trận đấu kết thúc với tỉ số HÒA.", "HÒA", JOptionPane.INFORMATION_MESSAGE);
             return;
+            
         }
 
-        // get myEmail
-        String myEmail = RunClient.socketHandler.getLoginUserName();
+        
+        String myUserName = RunClient.socketHandler.getLoginUserName();
 
-        if (winEmail.equals(myEmail)) {
-            // là email của mình thì win
+        if (winUserName.equals(myUserName)) {
+            // là UserName của mình thì win
             addChat(new ChatItem("[]", "KẾT QUẢ", "Bạn đã thắng"));
             JOptionPane.showMessageDialog(this, "Chúc mừng. Bạn đã chiến thắng.", "Chiến thắng", JOptionPane.INFORMATION_MESSAGE);
 
-        } else if (myEmail.equals(player1.getUserName()) || myEmail.equals(player2.getUserName())) {
-            // nếu mình là 1 trong 2 người chơi, mà winEmail ko phải mình => thua
+        } else if (myUserName.equals(player1.getUserName()) || myUserName.equals(player2.getUserName())) {
+            // nếu mình là 1 trong 2 người chơi, mà winUserName ko phải mình => thua
             addChat(new ChatItem("[]", "KẾT QUẢ", "Bạn đã thua"));
             JOptionPane.showMessageDialog(this, "Rất tiếc. Bạn đã thua cuộc.", "Thua cuộc", JOptionPane.INFORMATION_MESSAGE);
 
         } else {
             // còn lại là viewers
             String nameId = "";
-            if (player1.getUserName().equals(winEmail)) {
+            if (player1.getUserName().equals(winUserName)) {
                 nameId = player1.getNameId();
             } else {
                 nameId = player2.getNameId();
             }
             addChat(new ChatItem("[]", "KẾT QUẢ", "Người chơi " + nameId + " đã thắng"));
             JOptionPane.showMessageDialog(this, "Người chơi " + nameId + " đã thắng", "Kết quả", JOptionPane.INFORMATION_MESSAGE);
+            
         }
 
         // thoát phòng sau khi thua 
         // TODO sau này sẽ cho tạo ván mới, hiện tại cho thoát để tránh lỗi
-        // RunClient.socketHandler.leaveRoom();
+            RunClient.socketHandler.leaveRoom();
     }
 
     public void startGame(int turnTimeLimit, int matchTimeLimit) {
@@ -212,8 +214,8 @@ public class InGame extends javax.swing.JFrame {
     }
 
     // change turn sang cho email đầu vào
-    public void setTurn(String email) {
-        if (player1.getUserName().equals(email)) {
+    public void setTurn(String username) {
+        if (player1.getUserName().equals(username)) {
             turnTimer.restart();
             turn = 1;
             lbActive1.setVisible(true);
@@ -222,7 +224,7 @@ public class InGame extends javax.swing.JFrame {
             lbAvatar2.setBorder(javax.swing.BorderFactory.createTitledBorder("Chờ"));
         }
 
-        if (player2.getUserName().equals(email)) {
+        if (player2.getUserName().equals(username)) {
             turnTimer.restart();
             turn = 2;
             lbActive1.setVisible(false);
@@ -232,9 +234,9 @@ public class InGame extends javax.swing.JFrame {
         }
     }
 
-    // change turn sang cho đối thủ của email đầu vào
-    public void changeTurnFrom(String email) {
-        if (email.equals(player1.getUserName())) {
+    // change turn sang cho đối thủ của username đầu vào
+    public void changeTurnFrom(String username) {
+        if (username.equals(player1.getUserName())) {
             setTurn(player2.getUserName());
         } else {
             setTurn(player1.getUserName());
@@ -257,16 +259,16 @@ public class InGame extends javax.swing.JFrame {
         lastMove = btnOnBoard[row][column];
     }
 
-    public void addPoint(int row, int column, String email) {
+    public void addPoint(int row, int column, String username) {
         if (lastMove != null) {
             lastMove.setBackground(new Color(180, 180, 180));
         }
 
         lastMove = btnOnBoard[row][column];
         lastMove.setBackground(Color.yellow);
-        lastMove.setActionCommand(email); // save email as state
+        lastMove.setActionCommand(username); // save username as state
 
-        if (email.equals(player1 != null ? player1.getUserName() : "")) {
+        if (username.equals(player1 != null ? player1.getUserName() : "")) {
             lastMove.setIcon(p1Icon);
         } else {
             lastMove.setIcon(p2Icon);
@@ -280,9 +282,9 @@ public class InGame extends javax.swing.JFrame {
     }
 
     public void clickOnBoard(int row, int column) {
-        String myEmail = RunClient.socketHandler.getLoginUserName();
+        String myUserName = RunClient.socketHandler.getLoginUserName();
 
-        if (myEmail.equals(player1.getUserName()) || myEmail.equals(player2.getUserName())) {
+        if (myUserName.equals(player1.getUserName()) || myUserName.equals(player2.getUserName())) {
             RunClient.socketHandler.move(row, column);
         }
     }
@@ -306,13 +308,13 @@ public class InGame extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 if (b.getActionCommand().equals("")) {
 
-                    String myEmail = RunClient.socketHandler.getLoginUserName();
+                    String myUserName = RunClient.socketHandler.getLoginUserName();
 
-                    if (myEmail.equals(player1.getUserName()) && (turn == 1 || turn == 0)) {
+                    if (myUserName.equals(player1.getUserName()) && (turn == 1 || turn == 0)) {
                         b.setIcon(p1Icon);
                     }
 
-                    if (myEmail.equals(player2.getUserName()) && (turn == 2 || turn == 0)) {
+                    if (myUserName.equals(player2.getUserName()) && (turn == 2 || turn == 0)) {
                         b.setIcon(p2Icon);
                     }
                 }

@@ -584,7 +584,7 @@ public class Profile extends javax.swing.JFrame {
 
         // TODO validate data
         if (!Validation.checkUserName(username)) {
-            JOptionPane.showMessageDialog(this, "Email không hợp lệ", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Username không hợp lệ", "Lỗi", JOptionPane.ERROR_MESSAGE);
             txUserName.requestFocus();
             return;
         }
