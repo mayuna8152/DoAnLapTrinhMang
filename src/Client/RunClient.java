@@ -14,6 +14,7 @@ import client.view.scene.Login;
 import client.view.scene.MainMenu;
 import client.view.scene.Profile;
 import client.view.scene.Signup;
+import com.raven.main.Event;
 
 /**
  *
@@ -28,7 +29,8 @@ public class RunClient {
         MAINMENU,
         CHANGEPASSWORD,
         INGAME,
-        PROFILE
+        PROFILE,
+        EVENT
     }
 
     // scenes
@@ -39,6 +41,7 @@ public class RunClient {
     public static ChangePassword changePasswordScene;
     public static InGame inGameScene;
     public static Profile profileScene;
+    public static Event eventScene;
 
     // controller 
     public static SocketHandler socketHandler;
@@ -57,6 +60,8 @@ public class RunClient {
         changePasswordScene = new ChangePassword();
         inGameScene = new InGame();
         profileScene = new Profile();
+        eventScene = new Event();
+        
     }
 
     public static void openScene(SceneName sceneName) {
@@ -92,6 +97,10 @@ public class RunClient {
                     profileScene = new Profile();
                     profileScene.setVisible(true);
                     break;
+                case EVENT:
+                    eventScene = new Event();
+                    eventScene.setVisible(true);
+                    break;
                 default:
                     break;
             }
@@ -121,6 +130,8 @@ public class RunClient {
                     break;
                 case PROFILE:
                     profileScene.dispose();
+                case EVENT:
+                    eventScene.dispose();
                     break;
                 default:
                     break;
@@ -136,6 +147,7 @@ public class RunClient {
         changePasswordScene.dispose();
         inGameScene.dispose();
         profileScene.dispose();
+        eventScene.dispose();
     }
 
     public static void main(String[] args) {

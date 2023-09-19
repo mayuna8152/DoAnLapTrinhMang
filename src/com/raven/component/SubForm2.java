@@ -1,5 +1,6 @@
 package com.raven.component;
 
+import client.RunClient;
 import com.raven.main.MainProgram;
 
 public class SubForm2 extends javax.swing.JPanel {
@@ -35,12 +36,21 @@ public class SubForm2 extends javax.swing.JPanel {
         add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 70, -1));
 
         jButton1.setText("Ditmemay");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         MainProgram.getInstance().getSlideShow().slideTo(0);
     }//GEN-LAST:event_button1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    RunClient.closeScene(RunClient.SceneName.EVENT);                                              
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

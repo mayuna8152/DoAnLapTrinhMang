@@ -612,11 +612,9 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRefreshListRoomActionPerformed
 
     private void btnCreateRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateRoomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCreateRoomActionPerformed
+    RunClient.openScene(RunClient.SceneName.EVENT);    }//GEN-LAST:event_btnCreateRoomActionPerformed
 
     private void btnJoinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnJoinActionPerformed
 
     /**

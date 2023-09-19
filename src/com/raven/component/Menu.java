@@ -16,7 +16,7 @@ public class Menu extends javax.swing.JPanel {
     public Menu() {
         initComponents();
         setOpaque(false);
-        setLayout(new MigLayout("wrap 2, inset 30", "[fill, 100]10[fill, 100]", "[]10[]"));
+        setLayout(new MigLayout("wrap 1, inset 30", "[fill, 100]10[fill, 100]", "[]10[]"));
     }
 
     public void initMenu(EventMenu event) {

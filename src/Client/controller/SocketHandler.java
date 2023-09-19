@@ -181,7 +181,7 @@ public class SocketHandler {
                     case GAME_EVENT:
                         onReceiveGameEvent(received);
                         break;
-
+                    
                     case EXIT:
                         running = false;
                 }
@@ -309,7 +309,7 @@ public class SocketHandler {
             RunClient.mainMenuScene.setListRoom(vdata, vheader);
         }
     }
-
+   
     private void onReceiveListOnline(String received) {
 
     }
