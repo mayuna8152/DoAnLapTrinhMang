@@ -32,7 +32,7 @@ public class Event extends javax.swing.JFrame {
         };
         Menu menu = new Menu();
         menu.initMenu(event);
-        slideshow.initSlideshow(menu, new SubForm("Staff"), new SubForm2("Product"), new SubForm("Student"), new SubForm("Report"), new SubForm("Setting"));
+        slideshow.initSlideshow(menu, new SubForm("Event1"), new SubForm("Event2"), new SubForm("Event3"), new SubForm("Event4"), new SubForm2("Exit"));
     }
 
     /**
