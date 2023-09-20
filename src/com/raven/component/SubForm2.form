@@ -39,8 +39,8 @@
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="83" max="32767" attributes="0"/>
-                  <Component id="imageSlide" min="-2" pref="516" max="-2" attributes="0"/>
+                  <EmptySpace pref="89" max="32767" attributes="0"/>
+                  <Component id="imageSlide" min="-2" pref="510" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>

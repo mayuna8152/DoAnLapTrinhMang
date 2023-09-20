@@ -1,15 +1,13 @@
 package com.raven.component;
 
 import com.raven.main.MainProgram;
-import javax.swing.ImageIcon;
 
 
-public class SubForm4 extends javax.swing.JPanel {
-
-    public SubForm4(String name) {
+public class Tutorial extends javax.swing.JPanel {
+    
+    public Tutorial(String name) {
         initComponents();
         setOpaque(false);
-        imageSlide.addImage(new ImageIcon(getClass().getResource("/img/4.jpg")));
 
     }
 
@@ -18,7 +16,7 @@ public class SubForm4 extends javax.swing.JPanel {
     private void initComponents() {
 
         button1 = new com.raven.swing.Button();
-        imageSlide = new image_slide.ImageSlide();
+        videoPanel = new javax.swing.JPanel();
 
         button1.setText("Back");
         button1.addActionListener(new java.awt.event.ActionListener() {
@@ -27,31 +25,39 @@ public class SubForm4 extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout videoPanelLayout = new javax.swing.GroupLayout(videoPanel);
+        videoPanel.setLayout(videoPanelLayout);
+        videoPanelLayout.setHorizontalGroup(
+            videoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 856, Short.MAX_VALUE)
+        );
+        videoPanelLayout.setVerticalGroup(
+            videoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 525, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(933, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(43, Short.MAX_VALUE)
-                    .addComponent(imageSlide, javax.swing.GroupLayout.PREFERRED_SIZE, 869, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(97, 97, 97)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(videoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(577, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(92, Short.MAX_VALUE)
-                    .addComponent(imageSlide, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(17, 17, 17)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(videoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -62,6 +68,6 @@ public class SubForm4 extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.swing.Button button1;
-    private image_slide.ImageSlide imageSlide;
+    private javax.swing.JPanel videoPanel;
     // End of variables declaration//GEN-END:variables
 }

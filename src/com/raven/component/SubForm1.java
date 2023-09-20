@@ -49,8 +49,8 @@ public class SubForm1 extends javax.swing.JPanel {
                 .addContainerGap(577, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(83, Short.MAX_VALUE)
-                    .addComponent(imageSlide, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(92, Short.MAX_VALUE)
+                    .addComponent(imageSlide, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(17, 17, 17)))
         );
     }// </editor-fold>//GEN-END:initComponents
