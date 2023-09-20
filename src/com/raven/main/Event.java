@@ -7,8 +7,10 @@ package com.raven.main;
 import client.RunClient;
 
 import com.raven.component.Menu;
-import com.raven.component.SubForm;
+import com.raven.component.SubForm1;
 import com.raven.component.SubForm2;
+import com.raven.component.SubForm3;
+import com.raven.component.SubForm4;
 import com.raven.event.EventMenu;
 import java.awt.Color;
 
@@ -34,7 +36,7 @@ public class Event extends javax.swing.JFrame {
         };
         Menu menu = new Menu();
         menu.initMenu(event);
-        slideshow.initSlideshow(menu, new SubForm("Event1"), new SubForm("Event2"), new SubForm("Event3"), new SubForm("Event4"), new SubForm2("Exit"));
+        slideshow.initSlideshow(menu, new SubForm1("Event1"), new SubForm2("Event2"), new SubForm3("Event3"), new SubForm4("Event4"), new SubForm2("Exit"));
 
 
     }

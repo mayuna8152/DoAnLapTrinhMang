@@ -4,13 +4,13 @@ import com.raven.main.MainProgram;
 import javax.swing.ImageIcon;
 
 
-public class SubForm2 extends javax.swing.JPanel {
+public class SubForm1 extends javax.swing.JPanel {
 
-    public SubForm2(String name) {
+    public SubForm1(String name) {
         initComponents();
         setOpaque(false);
         jLabel1.setText("Form " + name);
-        imageSlide.addImage(new ImageIcon(getClass().getResource("/img/2.jpg")));
+        imageSlide.addImage(new ImageIcon(getClass().getResource("/img/1.jpg")));
 
     }
 
