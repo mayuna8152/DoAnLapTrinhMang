@@ -11,7 +11,9 @@ import com.raven.component.SubForm1;
 import com.raven.component.SubForm2;
 import com.raven.component.SubForm3;
 import com.raven.component.SubForm4;
+import com.raven.component.Tutorial;
 import com.raven.event.EventMenu;
+
 import java.awt.Color;
 
 /**
@@ -20,10 +22,11 @@ import java.awt.Color;
  */
 public class Event extends javax.swing.JFrame {
 
-    /**
+
+/**
      * Creates new form Main
      */
-    public Event() {
+        public Event() {
         initComponents();
         getContentPane().setBackground(new Color(236, 236, 236));
         MainProgram.getInstance().setSlideShow(slideshow);
@@ -36,7 +39,7 @@ public class Event extends javax.swing.JFrame {
         };
         Menu menu = new Menu();
         menu.initMenu(event);
-        slideshow.initSlideshow(menu, new SubForm1("Event1"), new SubForm2("Event2"), new SubForm3("Event3"), new SubForm4("Event4"), new SubForm2("Exit"));
+        slideshow.initSlideshow(menu, new SubForm1("Event1"), new SubForm2("Event2"), new SubForm3("Event3"), new SubForm4("Event4"), new Tutorial("Exit"));
 
 
     }
