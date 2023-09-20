@@ -157,7 +157,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/client/view/asset/icons8_add_24px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="T&#x1ea1;o ph&#xf2;ng"/>
+                <Property name="text" type="java.lang.String" value="S&#x1ef1; ki&#x1ec7;n"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateRoomActionPerformed"/>
@@ -179,7 +179,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/client/view/asset/icons8_open_door_24px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="V&#xe0;o ph&#xf2;ng"/>
+                <Property name="text" type="java.lang.String" value="H&#x1b0;&#x1edb;ng d&#x1eab;n"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnJoinActionPerformed"/>

@@ -22,10 +22,10 @@ public class Menu extends javax.swing.JPanel {
     public void initMenu(EventMenu event) {
         this.event = event;
         addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Event1", 0);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/2.png")), "Event2", 1);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Event3", 2);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/4.png")), "Event4", 3);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/5.png")), "Exit", 4);
+        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Event2", 1);
+        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Event3", 2);
+        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/2.png")), "Event4", 3);
+        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Tutorial", 4);
     }
 
     private void addMenu(Icon icon, String name, int index) {

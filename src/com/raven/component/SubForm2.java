@@ -49,7 +49,7 @@ public class SubForm2 extends javax.swing.JPanel {
     }//GEN-LAST:event_button1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    RunClient.closeScene(RunClient.SceneName.EVENT);                                              
+        RunClient.closeScene(RunClient.SceneName.EVENT);                                              
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.raven.main;
+import client.RunClient;
 
 import com.raven.component.Menu;
 import com.raven.component.SubForm;
@@ -28,11 +29,14 @@ public class Event extends javax.swing.JFrame {
             @Override
             public void selected(int index) {
                 slideshow.slideTo(index + 1);
+              
             }
         };
         Menu menu = new Menu();
         menu.initMenu(event);
         slideshow.initSlideshow(menu, new SubForm("Event1"), new SubForm("Event2"), new SubForm("Event3"), new SubForm("Event4"), new SubForm2("Exit"));
+
+
     }
 
     /**
@@ -46,30 +50,23 @@ public class Event extends javax.swing.JFrame {
 
         pictureBox1 = new com.raven.swing.PictureBox();
         slideshow = new com.raven.swing.slideshow.Slideshow();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         pictureBox1.setImage(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/background.jpg"))); // NOI18N
+        pictureBox1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pictureBox1.add(slideshow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 605));
 
-        pictureBox1.setLayer(slideshow, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout pictureBox1Layout = new javax.swing.GroupLayout(pictureBox1);
-        pictureBox1.setLayout(pictureBox1Layout);
-        pictureBox1Layout.setHorizontalGroup(
-            pictureBox1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pictureBox1Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(slideshow, javax.swing.GroupLayout.DEFAULT_SIZE, 1162, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-        );
-        pictureBox1Layout.setVerticalGroup(
-            pictureBox1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pictureBox1Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(slideshow, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/4.png"))); // NOI18N
+        jButton1.setText("BackToMainMenu");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        pictureBox1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, 190, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,19 +75,24 @@ public class Event extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(3, 3, 3)
                 .addComponent(pictureBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(3, 3, 3))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(3, 3, 3)
-                .addComponent(pictureBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(3, 3, 3))
+                .addComponent(pictureBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 655, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            RunClient.closeScene(RunClient.SceneName.EVENT);                                              
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,6 +131,7 @@ public class Event extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private com.raven.swing.PictureBox pictureBox1;
     private com.raven.swing.slideshow.Slideshow slideshow;
     // End of variables declaration//GEN-END:variables
