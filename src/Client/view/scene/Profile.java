@@ -179,7 +179,8 @@ public class Profile extends javax.swing.JFrame {
         lbEmail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client/view/asset/icons8-user-48 (1).png"))); // NOI18N
 
         txUserName.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        txUserName.setToolTipText("Email");
+        txUserName.setToolTipText("Username");
+        txUserName.setEnabled(false);
 
         lbUserName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client/view/asset/icons8_name_48px_1.png"))); // NOI18N
 
