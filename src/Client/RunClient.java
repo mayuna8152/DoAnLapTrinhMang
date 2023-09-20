@@ -5,6 +5,7 @@
  */
 package client;
 
+import Client.view.scene.Tutorial1;
 import client.controller.SocketHandler;
 import client.view.helper.LookAndFeel;
 import client.view.scene.ChangePassword;
@@ -30,7 +31,8 @@ public class RunClient {
         CHANGEPASSWORD,
         INGAME,
         PROFILE,
-        EVENT
+        EVENT,
+        TUTORIAL,
     }
 
     // scenes
@@ -42,6 +44,8 @@ public class RunClient {
     public static InGame inGameScene;
     public static Profile profileScene;
     public static Event eventScene;
+    public static Tutorial1 tutorialScene;
+
 
     // controller 
     public static SocketHandler socketHandler;
@@ -61,6 +65,7 @@ public class RunClient {
         inGameScene = new InGame();
         profileScene = new Profile();
         eventScene = new Event();
+        tutorialScene = new Tutorial1();
         
     }
 
@@ -101,6 +106,10 @@ public class RunClient {
                     eventScene = new Event();
                     eventScene.setVisible(true);
                     break;
+                case TUTORIAL:
+                    tutorialScene = new Tutorial1();
+                    tutorialScene.setVisible(true);
+                    break;
                 default:
                     break;
             }
@@ -133,6 +142,9 @@ public class RunClient {
                 case EVENT:
                     eventScene.dispose();
                     break;
+                case TUTORIAL:
+                    tutorialScene.dispose();
+                        
                 default:
                     break;
             }
@@ -148,6 +160,7 @@ public class RunClient {
         inGameScene.dispose();
         profileScene.dispose();
         eventScene.dispose();
+        tutorialScene.dispose();
     }
 
     public static void main(String[] args) {

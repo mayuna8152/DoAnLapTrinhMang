@@ -223,7 +223,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         plBtns.setBorder(javax.swing.BorderFactory.createTitledBorder("Chức năng"));
 
-        btnCreateRoom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client/view/asset/icons8_add_24px.png"))); // NOI18N
+        btnCreateRoom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Client/view/asset/icons8-today-24.png"))); // NOI18N
         btnCreateRoom.setText("Sự kiện");
         btnCreateRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,7 +239,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        btnJoin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client/view/asset/icons8_open_door_24px.png"))); // NOI18N
+        btnJoin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Client/view/asset/icons8-book-24.png"))); // NOI18N
         btnJoin.setText("Hướng dẫn");
         btnJoin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -615,6 +615,7 @@ public class MainMenu extends javax.swing.JFrame {
     RunClient.openScene(RunClient.SceneName.EVENT);    }//GEN-LAST:event_btnCreateRoomActionPerformed
 
     private void btnJoinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinActionPerformed
+    RunClient.openScene(RunClient.SceneName.TUTORIAL);                                                
 
     }//GEN-LAST:event_btnJoinActionPerformed
 
