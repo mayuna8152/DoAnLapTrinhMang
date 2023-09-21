@@ -44,12 +44,15 @@
                       <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="jPanel1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbHeaderText" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLogin" alignment="2" min="-2" pref="316" max="-2" attributes="0"/>
                   <Component id="btnSignup" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="lbHeaderText" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -58,9 +61,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Component id="lbHeaderText" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnLogin" min="-2" pref="74" max="-2" attributes="0"/>
@@ -90,7 +93,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="25" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="CH&#xc0;O M&#x1eea;NG"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Client/view/asset/GomokuOnline.png"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnLogin">
