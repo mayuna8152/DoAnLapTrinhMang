@@ -314,7 +314,7 @@ public class Login extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         Desktop desktop = Desktop.getDesktop();
 
-        String homepageUrl = "https://www.aniplex.co.jp/";
+        String homepageUrl = "https://www.facebook.com/gomoku.board.game?locale=vi_VN";
 
         try {
             URI uri = new URI(homepageUrl);
