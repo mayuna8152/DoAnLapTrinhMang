@@ -347,6 +347,7 @@ public class InGame extends javax.swing.JFrame {
         plRightContainer = new javax.swing.JPanel();
         plToolContainer = new javax.swing.JPanel();
         btnLeaveRoom = new javax.swing.JButton();
+        btnTutorial = new javax.swing.JButton();
         plPlayerContainer = new javax.swing.JPanel();
         plPlayer = new javax.swing.JPanel();
         lbAvatar1 = new javax.swing.JLabel();
@@ -390,21 +391,34 @@ public class InGame extends javax.swing.JFrame {
             }
         });
 
+        btnTutorial.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnTutorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Client/view/asset/icons8-book-24.png"))); // NOI18N
+        btnTutorial.setText("Hướng dẫn!");
+        btnTutorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTutorialActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout plToolContainerLayout = new javax.swing.GroupLayout(plToolContainer);
         plToolContainer.setLayout(plToolContainerLayout);
         plToolContainerLayout.setHorizontalGroup(
             plToolContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plToolContainerLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnLeaveRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGroup(plToolContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnLeaveRoom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTutorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(74, 74, 74))
         );
         plToolContainerLayout.setVerticalGroup(
             plToolContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(plToolContainerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnLeaveRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(btnLeaveRoom)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(btnTutorial)
+                .addContainerGap())
         );
 
         plPlayer.setBorder(javax.swing.BorderFactory.createTitledBorder("Người chơi"));
@@ -704,6 +718,10 @@ public class InGame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLeaveRoomActionPerformed
 
+    private void btnTutorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTutorialActionPerformed
+        RunClient.openScene(RunClient.SceneName.TUTORIAL);
+    }//GEN-LAST:event_btnTutorialActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -751,6 +769,7 @@ public class InGame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLeaveRoom;
     private javax.swing.JButton btnSendMessage;
+    private javax.swing.JButton btnTutorial;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
