@@ -19,7 +19,6 @@ public class Tutorial extends javax.swing.JPanel {
         button1 = new com.raven.swing.Button();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -37,9 +36,6 @@ public class Tutorial extends javax.swing.JPanel {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/rule.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, 388, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/fun.gif"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, 480, 170));
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -51,6 +47,5 @@ public class Tutorial extends javax.swing.JPanel {
     private com.raven.swing.Button button1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

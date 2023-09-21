@@ -15,6 +15,8 @@ import com.raven.component.Tutorial;
 import com.raven.event.EventMenu;
 
 import java.awt.Color;
+import java.awt.Desktop;
+import java.net.URI;
 
 /**
  *
@@ -56,6 +58,7 @@ public class Event extends javax.swing.JFrame {
         pictureBox1 = new com.raven.swing.PictureBox();
         slideshow = new com.raven.swing.slideshow.Slideshow();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -73,6 +76,14 @@ public class Event extends javax.swing.JFrame {
         });
         pictureBox1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, 190, 50));
 
+        jButton2.setText("Homepage");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        pictureBox1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 590, 170, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,7 +97,7 @@ public class Event extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(3, 3, 3)
-                .addComponent(pictureBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 655, Short.MAX_VALUE)
+                .addComponent(pictureBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -98,6 +109,18 @@ public class Event extends javax.swing.JFrame {
             RunClient.closeScene(RunClient.SceneName.EVENT);                                              
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+   Desktop desktop = Desktop.getDesktop();
+
+        String homepageUrl = "https://www.aniplex.co.jp/";
+
+        try {
+            URI uri = new URI(homepageUrl);
+            desktop.browse(uri);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,6 +160,7 @@ public class Event extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private com.raven.swing.PictureBox pictureBox1;
     private com.raven.swing.slideshow.Slideshow slideshow;
     // End of variables declaration//GEN-END:variables
