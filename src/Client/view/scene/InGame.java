@@ -87,7 +87,7 @@ public class InGame extends javax.swing.JFrame {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 if (JOptionPane.showConfirmDialog(InGame.this,
-                        "Bạn có chắc muốn thoát phòng?", "Thoát phòng?",
+                        "Ban co muon thoat khoi phong ?", "EXIT?",
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
                     RunClient.socketHandler.leaveRoom();
@@ -138,8 +138,8 @@ public class InGame extends javax.swing.JFrame {
 
         // tie
         if (winUserName == null) {
-            addChat(new ChatItem("[]", "KẾT QUẢ", "HÒA"));
-            JOptionPane.showMessageDialog(this, "Trận đấu kết thúc với tỉ số HÒA.", "HÒA", JOptionPane.INFORMATION_MESSAGE);
+            addChat(new ChatItem("[]", "Match Ended", "HOA"));
+            JOptionPane.showMessageDialog(this, "Tran dau ket thuc voi ti so hoa.", "HOA", JOptionPane.INFORMATION_MESSAGE);
             return;
             
         }
@@ -149,13 +149,13 @@ public class InGame extends javax.swing.JFrame {
 
         if (winUserName.equals(myUserName)) {
             // là UserName của mình thì win
-            addChat(new ChatItem("[]", "KẾT QUẢ", "Bạn đã thắng"));
-            JOptionPane.showMessageDialog(this, "Chúc mừng. Bạn đã chiến thắng.", "Chiến thắng", JOptionPane.INFORMATION_MESSAGE);
+            addChat(new ChatItem("[]", "Match Ended", "WON!!"));
+            JOptionPane.showMessageDialog(this, "Chuc mung ban dan chien thang", "YOU WON!!", JOptionPane.INFORMATION_MESSAGE);
 
         } else if (myUserName.equals(player1.getUserName()) || myUserName.equals(player2.getUserName())) {
             // nếu mình là 1 trong 2 người chơi, mà winUserName ko phải mình => thua
-            addChat(new ChatItem("[]", "KẾT QUẢ", "Bạn đã thua"));
-            JOptionPane.showMessageDialog(this, "Rất tiếc. Bạn đã thua cuộc.", "Thua cuộc", JOptionPane.INFORMATION_MESSAGE);
+            addChat(new ChatItem("[]", "Match Ended", "LOST!"));
+            JOptionPane.showMessageDialog(this, "Rat tiet ban da thua.", "YOU LOST", JOptionPane.INFORMATION_MESSAGE);
 
         } else {
             // còn lại là viewers
@@ -165,8 +165,8 @@ public class InGame extends javax.swing.JFrame {
             } else {
                 nameId = player2.getNameId();
             }
-            addChat(new ChatItem("[]", "KẾT QUẢ", "Người chơi " + nameId + " đã thắng"));
-            JOptionPane.showMessageDialog(this, "Người chơi " + nameId + " đã thắng", "Kết quả", JOptionPane.INFORMATION_MESSAGE);
+            addChat(new ChatItem("[]", "Match Ended", "Player " + nameId + " won"));
+            JOptionPane.showMessageDialog(this, "Player " + nameId + " won", "Match Ended", JOptionPane.INFORMATION_MESSAGE);
             
         }
 
@@ -220,8 +220,8 @@ public class InGame extends javax.swing.JFrame {
             turn = 1;
             lbActive1.setVisible(true);
             lbActive2.setVisible(false);
-            lbAvatar1.setBorder(javax.swing.BorderFactory.createTitledBorder("Đang đánh.."));
-            lbAvatar2.setBorder(javax.swing.BorderFactory.createTitledBorder("Chờ"));
+            lbAvatar1.setBorder(javax.swing.BorderFactory.createTitledBorder("Playing.."));
+            lbAvatar2.setBorder(javax.swing.BorderFactory.createTitledBorder("Wait"));
         }
 
         if (player2.getUserName().equals(username)) {
@@ -229,8 +229,8 @@ public class InGame extends javax.swing.JFrame {
             turn = 2;
             lbActive1.setVisible(false);
             lbActive2.setVisible(true);
-            lbAvatar1.setBorder(javax.swing.BorderFactory.createTitledBorder("Chờ"));
-            lbAvatar2.setBorder(javax.swing.BorderFactory.createTitledBorder("Đang đánh.."));
+            lbAvatar1.setBorder(javax.swing.BorderFactory.createTitledBorder("Wait"));
+            lbAvatar2.setBorder(javax.swing.BorderFactory.createTitledBorder("Playing.."));
         }
     }
 
@@ -711,7 +711,7 @@ public class InGame extends javax.swing.JFrame {
     private void btnLeaveRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaveRoomActionPerformed
         // https://stackoverflow.com/a/8689130
         if (JOptionPane.showConfirmDialog(this,
-                "Bạn có chắc muốn thoát phòng?", "Warning",
+                "QUIT?", "Warning",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
             RunClient.socketHandler.leaveRoom();

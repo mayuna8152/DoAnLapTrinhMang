@@ -93,7 +93,7 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
 
         lbHeaderText.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
-        lbHeaderText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Client/view/asset/GomokuOnline.png"))); // NOI18N
+        lbHeaderText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Client/view/asset/GomokuOnline.jpg"))); // NOI18N
 
         btnLogin.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client/view/asset/icons8_login_32px.png"))); // NOI18N
@@ -283,7 +283,8 @@ public class Login extends javax.swing.JFrame {
             txPassword.requestFocus();
             return;
         }
-
+        
+        
         RunClient.socketHandler.login(username, password);
         setLoading(true);
     }//GEN-LAST:event_btnLoginActionPerformed

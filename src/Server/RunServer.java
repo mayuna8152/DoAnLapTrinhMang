@@ -37,7 +37,7 @@ public class RunServer {
 
             ss = new ServerSocket(port);
             System.out.println("Created Server at port " + port + ".");
-
+            System.out.println(ss.getLocalPort());
             // init rsa key
             serverSide = new RSA()
                     .preparePrivateKey("src/Server/rsa_keypair/privateKey");

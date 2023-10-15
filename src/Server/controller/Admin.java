@@ -29,7 +29,7 @@ public class Admin implements Runnable {
         String inp;
 
         while (!RunServer.isShutDown) {
-            System.out.print("AdminCommand> ");
+            System.out.print("<Administrator> ");
             inp = s.nextLine();
             try {
                 if (inp.equalsIgnoreCase("user-count")) {
@@ -55,21 +55,19 @@ public class Admin implements Runnable {
                     }
                 }
             }catch(ArrayIndexOutOfBoundsException e){
-                System.out.println("Thiếu tham số !!!");
+                System.out.println("Thieu tham so !!!");
             }
 
             if (inp.equalsIgnoreCase("help")) {
-                System.out.println("===[List commands]======================\n"
-                        + "======= Thiết yếu =======\n"
-                        + "user-count:        số người đang online\n"
-                        + "best-user:         thông tin user thắng nhiều nhất\n"
-                        + "shortest-match:    thông tin trận đấu có thời gian ngắn nhất\n"
-                        + "block <user-emal>: block user có username là <user-username khỏi hệ thống>\n"
-                        + "log <match-id>:    xem thông tin trận đấu có mã là <match-id>\n"
-                        + "======= Thêm =======\n"
-                        + "room-count: số phòng đang mở\n"
-                        + "shutdown: tắt server\n"
-                        + "=======================================");
+                System.out.println("======================[List commands]======================\n"
+                        + "user-count:            so player dang online\n"
+                        + "best-user:             thong tin user dat top1\n"
+                        + "shortest-match:        thong tin tran dau ngan nhat\n"
+                        + "block <user-username>: block user co username là <user-username> khoi he thong\n"
+                        + "log <match-id>:        xem thong tin tran dau co id la <match-id>\n"
+                        + "room-count:            so phong dang mo\n"
+                        + "shutdown:              ngung server\n"
+                        + "=====================================================================");
             }
         }
     }

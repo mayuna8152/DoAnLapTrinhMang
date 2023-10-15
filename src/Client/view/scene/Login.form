@@ -94,7 +94,7 @@
           <Font name="Tahoma" size="25" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Client/view/asset/GomokuOnline.png"/>
+          <Image iconType="3" name="/Client/view/asset/GomokuOnline.jpg"/>
         </Property>
       </Properties>
     </Component>
