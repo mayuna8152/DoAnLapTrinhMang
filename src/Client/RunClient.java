@@ -5,6 +5,7 @@
  */
 package client;
 
+import Client.view.scene.SinglePlay;
 import Client.view.scene.Tutorial1;
 import client.controller.SocketHandler;
 import client.view.helper.LookAndFeel;
@@ -16,10 +17,12 @@ import client.view.scene.MainMenu;
 import client.view.scene.Profile;
 import client.view.scene.Signup;
 import com.raven.main.Event;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
-
+ *
  */
 public class RunClient {
 
@@ -33,6 +36,7 @@ public class RunClient {
         PROFILE,
         EVENT,
         TUTORIAL,
+        SINGLEPLAY,
     }
 
     // scenes
@@ -45,7 +49,8 @@ public class RunClient {
     public static Profile profileScene;
     public static Event eventScene;
     public static Tutorial1 tutorialScene;
-
+    public static SinglePlay singleplayScene;
+    public static Thread singleplayThread;
 
     // controller 
     public static SocketHandler socketHandler;
@@ -66,7 +71,8 @@ public class RunClient {
         profileScene = new Profile();
         eventScene = new Event();
         tutorialScene = new Tutorial1();
-        
+        singleplayScene = new SinglePlay();
+
     }
 
     public static void openScene(SceneName sceneName) {
@@ -110,6 +116,18 @@ public class RunClient {
                     tutorialScene = new Tutorial1();
                     tutorialScene.setVisible(true);
                     break;
+                case SINGLEPLAY:
+                    singleplayScene = new SinglePlay();
+                    singleplayScene.InitGUI();
+                    singleplayThread = new Thread() {
+                        public void run() {
+                            singleplayScene.GamePlaying();
+                        }
+                    };
+                    singleplayThread.start();
+                    
+
+                    break;
                 default:
                     break;
             }
@@ -144,7 +162,9 @@ public class RunClient {
                     break;
                 case TUTORIAL:
                     tutorialScene.dispose();
-                        
+                case SINGLEPLAY:
+                    
+
                 default:
                     break;
             }
@@ -161,6 +181,7 @@ public class RunClient {
         profileScene.dispose();
         eventScene.dispose();
         tutorialScene.dispose();
+        singleplayScene.dispose();
     }
 
     public static void main(String[] args) {

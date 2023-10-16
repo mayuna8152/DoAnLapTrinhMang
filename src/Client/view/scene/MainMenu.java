@@ -170,6 +170,7 @@ public class MainMenu extends javax.swing.JFrame {
         btnFindMatch = new javax.swing.JButton();
         btnJoin = new javax.swing.JButton();
         btnWatch = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         btnLogout = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
@@ -255,19 +256,30 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Client/view/asset/icons8_circled_play_24px.png"))); // NOI18N
+        jButton2.setText("Chơi đơn");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout plBtnsLayout = new javax.swing.GroupLayout(plBtns);
         plBtns.setLayout(plBtnsLayout);
         plBtnsLayout.setHorizontalGroup(
             plBtnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plBtnsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnFindMatch)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnWatch)
+                .addGroup(plBtnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(plBtnsLayout.createSequentialGroup()
+                        .addComponent(btnFindMatch)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnWatch, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnJoin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCreateRoom)
+                .addGroup(plBtnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCreateRoom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnJoin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         plBtnsLayout.setVerticalGroup(
@@ -275,11 +287,14 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(plBtnsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(plBtnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCreateRoom)
                     .addComponent(btnFindMatch)
                     .addComponent(btnJoin)
                     .addComponent(btnWatch))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(plBtnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCreateRoom)
+                    .addComponent(jButton2))
+                .addContainerGap())
         );
 
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client/view/asset/icons8_logout_rounded_left_24px.png"))); // NOI18N
@@ -491,7 +506,7 @@ public class MainMenu extends javax.swing.JFrame {
         plFoundMatchLayout.setHorizontalGroup(
             plFoundMatchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(plFoundMatchLayout.createSequentialGroup()
-                .addGap(131, 131, 131)
+                .addGap(174, 174, 174)
                 .addComponent(btnDeclinePairMatch)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAcceptPairMatch)
@@ -615,10 +630,18 @@ public class MainMenu extends javax.swing.JFrame {
     RunClient.openScene(RunClient.SceneName.EVENT);    }//GEN-LAST:event_btnCreateRoomActionPerformed
 
     private void btnJoinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinActionPerformed
-    RunClient.openScene(RunClient.SceneName.TUTORIAL);                                                
+        RunClient.openScene(RunClient.SceneName.TUTORIAL);
 
     }//GEN-LAST:event_btnJoinActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        RunClient.openScene(RunClient.SceneName.SINGLEPLAY);
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+             
+    
     /**
      * @param args the command line arguments
      */
@@ -667,6 +690,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnRefreshListRoom;
     private javax.swing.JButton btnWatch;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
