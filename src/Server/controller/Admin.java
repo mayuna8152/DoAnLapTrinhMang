@@ -40,6 +40,8 @@ public class Admin implements Runnable {
                     showShortestMatch(getShortestMatch());
                 } else if (inp.indexOf("block") == 0) {
                     System.out.println(blockUser(inp.split(" ")[1]));
+                } else if (inp.indexOf("unblock") == 0) {
+                    System.out.println(unblockUser(inp.split(" ")[1]));   
                 } else if (inp.indexOf("log") == 0) {
                     showGameMatchDetails(inp.split(" ")[1]);
                 } else if (inp.equalsIgnoreCase("room-count")) {
@@ -54,7 +56,7 @@ public class Admin implements Runnable {
                         Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-            }catch(ArrayIndexOutOfBoundsException e){
+            } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Thieu tham so !!!");
             }
 
@@ -64,6 +66,7 @@ public class Admin implements Runnable {
                         + "best-user:             thong tin user dat top1\n"
                         + "shortest-match:        thong tin tran dau ngan nhat\n"
                         + "block <user-username>: block user co username là <user-username> khoi he thong\n"
+                        + "unblock <user-username>: unblock user co username là <user-username> trong he thong\n"
                         + "log <match-id>:        xem thong tin tran dau co id la <match-id>\n"
                         + "room-count:            so phong dang mo\n"
                         + "shutdown:              ngung server\n"
@@ -110,10 +113,12 @@ public class Admin implements Runnable {
         playerBus = new PlayerBUS();
         Player p1 = new Player(playerBus.getById(m.getPlayerID1()));
         Player p2 = new Player(playerBus.getById(m.getPlayerID2()));
-        System.out.println("The match with shortest play time: ");
-        System.out.println("Player 1: " + p1.getName());
-        System.out.println("Player 1: " + p2.getName());
-        System.out.println("Play time: " + m.getPlayTime() + " second");
+        System.out.println("Match id: " + m.getId());
+        System.out.println("    + Player 1: " + playerBus.getById(m.getPlayerID1()).getName());
+        System.out.println("    + Player 2: " + playerBus.getById(m.getPlayerID2()).getName());
+        System.out.println("    + Winner: " + playerBus.getById(m.getWinnerID()).getName());
+        System.out.println("    + Play time in second: " + m.getPlayTime());
+        System.out.println("    + Total move: " + m.getTotalMove());
     }
 
     // Block user with provided UserName
@@ -126,6 +131,17 @@ public class Admin implements Runnable {
             }
         }
         return "Cant find user with provided username!";
+    }
+
+    private String unblockUser(String username) {
+        playerBus = new PlayerBUS();
+        for (Player p : playerBus.getList()) {
+            if (p.getUserName().equalsIgnoreCase(username)) {
+                p.setBlocked(false);
+                return playerBus.update(p) ? "Success" : "Fail";
+            }
+        }
+        return "Cannot find user with the provided username!";
     }
 
     // Get Game match with provide id

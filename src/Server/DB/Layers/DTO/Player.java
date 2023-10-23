@@ -32,6 +32,25 @@ public class Player {
         this.score += toAdd;
     }
 
+    public void addMatchCount(int toAdd) {
+        this.matchCount += toAdd;
+    }
+
+    public void addWinCount(int toAdd) {
+        this.winCount += toAdd;
+    }
+
+    public void addLoseCount(int toAdd) {
+        this.loseCount += toAdd;
+    }
+
+    public void addcurrentStreak(int toAdd) {
+        this.currentStreak += toAdd;
+        if (this.currentStreak < 0) {
+            this.currentStreak = 0;
+        }
+    }
+
     public Player(int id, String username, String password, String avatar, String name, String gender, int yearOfBirth, int score, int matchCount, int winCount, int loseCount, int currentStreak, boolean blocked) {
         this.id = id;
         this.username = username;

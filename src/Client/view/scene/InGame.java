@@ -90,7 +90,8 @@ public class InGame extends javax.swing.JFrame {
                         "Ban co muon thoat khoi phong ?", "EXIT?",
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
-                    RunClient.socketHandler.leaveRoom();
+                    //RunClient.socketHandler.leaveRoom();
+                    RunClient.closeScene(RunClient.SceneName.INGAME);
                 }
             }
         });
@@ -141,10 +142,9 @@ public class InGame extends javax.swing.JFrame {
             addChat(new ChatItem("[]", "Match Ended", "HOA"));
             JOptionPane.showMessageDialog(this, "Tran dau ket thuc voi ti so hoa.", "HOA", JOptionPane.INFORMATION_MESSAGE);
             return;
-            
+
         }
 
-        
         String myUserName = RunClient.socketHandler.getLoginUserName();
 
         if (winUserName.equals(myUserName)) {
@@ -167,12 +167,13 @@ public class InGame extends javax.swing.JFrame {
             }
             addChat(new ChatItem("[]", "Match Ended", "Player " + nameId + " won"));
             JOptionPane.showMessageDialog(this, "Player " + nameId + " won", "Match Ended", JOptionPane.INFORMATION_MESSAGE);
-            
+
         }
 
         // thoát phòng sau khi thua 
         // TODO sau này sẽ cho tạo ván mới, hiện tại cho thoát để tránh lỗi
-            RunClient.socketHandler.leaveRoom();
+        RunClient.socketHandler.leaveRoom();
+        
     }
 
     public void startGame(int turnTimeLimit, int matchTimeLimit) {
@@ -213,7 +214,7 @@ public class InGame extends javax.swing.JFrame {
         matchTimer.setCurrentTick(value);
     }
 
-    // change turn sang cho email đầu vào
+    // change turn sang cho user đầu vào
     public void setTurn(String username) {
         if (player1.getUserName().equals(username)) {
             turnTimer.restart();
@@ -222,15 +223,16 @@ public class InGame extends javax.swing.JFrame {
             lbActive2.setVisible(false);
             lbAvatar1.setBorder(javax.swing.BorderFactory.createTitledBorder("Playing.."));
             lbAvatar2.setBorder(javax.swing.BorderFactory.createTitledBorder("Wait"));
-        }
-
-        if (player2.getUserName().equals(username)) {
+        } else if (player2.getUserName().equals(username)) {
             turnTimer.restart();
             turn = 2;
             lbActive1.setVisible(false);
             lbActive2.setVisible(true);
             lbAvatar1.setBorder(javax.swing.BorderFactory.createTitledBorder("Wait"));
             lbAvatar2.setBorder(javax.swing.BorderFactory.createTitledBorder("Playing.."));
+        } else {
+            // Invalid username
+            System.out.println("Invalid username: " + username);
         }
     }
 
